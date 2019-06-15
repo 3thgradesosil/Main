@@ -1,12 +1,10 @@
 fileFormatVersion: 2
 guid: 1d42c4ace908d7a43a1d92ff322e24b1
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5496785179430181927
-    second: badak_0
+  fileIDToRecycleName:
+    21300000: badak_0
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -102,7 +100,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 429ed5915bbe46e40b3f9688a9deaebc
-      internalID: -5496785179430181927
       vertices: []
       indices: 
       edges: []
@@ -111,12 +108,10 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 95bc0324e0789314fbb16f8f5dea51cd
-    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
