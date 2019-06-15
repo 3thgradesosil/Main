@@ -9,7 +9,7 @@ public class snakeBody : MonoBehaviour
     private Transform head;
 
     // Start is called before the first frame update
-    void Start()
+    void Start()    //몸체 각각이 머리를 따라가도록 조정
     {
         head = GameObject.FindGameObjectWithTag("Player").transform.gameObject.transform;
         for(int i=0; i< head.GetComponent<worm_movement>().bodyParts.Count; i++)
@@ -25,7 +25,7 @@ public class snakeBody : MonoBehaviour
     public float overTime = 0.15f;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void FixedUpdate()      //몸체들의 방향을 머리랑 맞춤
     {
         if(myOrder == 0)
         {
@@ -35,6 +35,7 @@ public class snakeBody : MonoBehaviour
         else
         {
             transform.position = Vector3.SmoothDamp(transform.position, head.GetComponent<worm_movement>().bodyParts[myOrder - 1].position, ref movementVelocity, overTime);
+            transform.LookAt(head.transform.position);
         }
     }
 }
