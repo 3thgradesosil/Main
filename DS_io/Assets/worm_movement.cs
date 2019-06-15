@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class worm_movement : MonoBehaviour
 {
+    public List<Transform> bodyParts = new List<Transform>();
     public Camera ourCamera;
     public float Speed;
     public float offset = 0.5f;
@@ -27,10 +28,4 @@ public class worm_movement : MonoBehaviour
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
     }
-    private void FixedUpdate()
-    {
-        
-    }
-
-   
 }
