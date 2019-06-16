@@ -16,6 +16,7 @@ public class snakeBody : MonoBehaviour
         {
             if(gameObject == head.GetComponent<worm_movement>().bodyParts[i].gameObject)
             {
+                print("Wow");
                 myOrder = i;
             }
         }
@@ -25,16 +26,18 @@ public class snakeBody : MonoBehaviour
     public float overTime = 0.15f;
 
     // Update is called once per frame
-    void FixedUpdate()      //몸체들의 방향을 머리랑 맞춤
+    private void Update()      //몸체들의 방향을 머리랑 맞춤
     {
         if(myOrder == 0)
         {
             transform.position = Vector3.SmoothDamp(transform.position, head.position, ref movementVelocity, overTime);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.LookAt(head.transform.position);
         }
         else
         {
             transform.position = Vector3.SmoothDamp(transform.position, head.GetComponent<worm_movement>().bodyParts[myOrder - 1].position, ref movementVelocity, overTime);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             transform.LookAt(head.transform.position);
         }
     }

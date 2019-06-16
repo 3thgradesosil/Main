@@ -25,7 +25,7 @@ public class worm_movement : MonoBehaviour
         //I have to fixed direction that looking
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
-        float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
+        float rotation_z = 0f;
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }

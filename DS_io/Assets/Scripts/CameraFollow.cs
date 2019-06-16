@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        target = GameObject.Find("SnakeHead").transform;
     }
 
     // Update is called once per frame
