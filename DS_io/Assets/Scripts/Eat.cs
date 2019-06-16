@@ -14,6 +14,10 @@ public class Eat : MonoBehaviour
     int Score = 0;
     public Transform bodyObject;
     private Transform head;
+    public bool sizeUp;
+    private Vector3 currentSize = Vector3.one;
+    public float growthRate = 0.0000005f;
+    public float bodyPartOverTimeFollow = 0.05f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         head = GameObject.FindGameObjectWithTag("Player").transform.gameObject.transform;
@@ -33,14 +37,28 @@ public class Eat : MonoBehaviour
             {
                 Vector3 currentPos = head.position;
                 Transform newBodyPart = Instantiate(bodyObject, currentPos, Quaternion.identity) as Transform;
+                //newBodyPart.localScale = currentSize;
+                //newBodyPart.GetComponent<snakeBody>().overTime = bodyPartOverTimeFollow;
                 GetComponent<worm_movement>().bodyParts.Add(newBodyPart);
+
+                
             }
             else
             {
 
                 Vector3 currentPos = GetComponent<worm_movement>().bodyParts[GetComponent<worm_movement>().bodyParts.Count -1].position;
                 Transform newBodyPart = Instantiate(bodyObject, currentPos, Quaternion.identity) as Transform;
+                //newBodyPart.localScale = currentSize;
+                //newBodyPart.GetComponent<snakeBody>().overTime = bodyPartOverTimeFollow;
                 GetComponent<worm_movement>().bodyParts.Add(newBodyPart);
+            }
+            //currentSize += Vector3.one * growthRate;
+            //transform.localScale = currentSize;
+
+            foreach (Transform bodyPart_x in GetComponent<worm_movement>().bodyParts)
+            {
+                //bodyPart_x.localScale = currentSize;
+                //bodyPart_x.GetComponent<snakeBody>().overTime = bodyPartOverTimeFollow;
             }
         }
     }
