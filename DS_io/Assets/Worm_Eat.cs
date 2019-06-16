@@ -6,7 +6,7 @@ using System.Threading;
 
 public class Worm_Eat : MonoBehaviour
 {
-    public string Tag;
+    public string Tag = "Food";
     public Text Letters;
     public float Increase;
     public float tmp;
@@ -15,6 +15,7 @@ public class Worm_Eat : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("안 맞았지롱");
         if (other.gameObject.tag == Tag)
         {
             transform.localScale += new Vector3(Increase, Increase, Increase);
@@ -28,6 +29,7 @@ public class Worm_Eat : MonoBehaviour
             Letters.text = "Score: " + Score;
         }
     }
+
     void OnTriggerEnter(Collider other)
     {
 

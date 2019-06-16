@@ -22,7 +22,7 @@ public class snakeBody : MonoBehaviour
     }
     private Vector3 movementVelocity;
     [Range(0.0f,1.0f)]
-    public float overTime = 0.15f;
+    public float overTime = 0.05f;
 
     // Update is called once per frame
     void FixedUpdate()      //몸체들의 방향을 머리랑 맞춤
