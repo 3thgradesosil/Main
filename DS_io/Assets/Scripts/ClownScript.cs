@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClownScript : MonoBehaviour
 {
-    public string Tag = "Player";
+    public string Tag;
     // Start is called before the first frame update
     void Start()
     {
